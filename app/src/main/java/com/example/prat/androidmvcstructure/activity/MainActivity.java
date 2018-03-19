@@ -5,6 +5,7 @@ import android.content.Context;
 import android.os.Build;
 import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.AttributeSet;
@@ -81,6 +82,13 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Second Fragment", Toast.LENGTH_SHORT).show();
                 //some thing after click this menu
                 getSupportFragmentManager().beginTransaction()
+                        .setCustomAnimations(
+                                R.anim.from_right,
+                                R.anim.to_left,
+                                R.anim.from_left,
+                                R.anim.to_right
+
+                        )
                         .replace(R.id.contentContainer, SecondFragment.newInstance())
                         .addToBackStack(null)
                         .commit();

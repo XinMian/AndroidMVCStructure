@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.example.prat.androidmvcstructure.R;
 
@@ -14,6 +15,7 @@ import com.example.prat.androidmvcstructure.R;
  */
 public class SecondFragment extends Fragment {
 
+    Button buttonOK;
     public SecondFragment() {
         super();
     }
@@ -34,6 +36,14 @@ public class SecondFragment extends Fragment {
     }
 
     private void initInstances(View rootView) {
+
+        buttonOK = rootView.findViewById(R.id.buttonOK);
+        buttonOK.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getFragmentManager().popBackStack();
+            }
+        });
         // Init 'View' instance(s) with rootView.findViewById here
     }
 
