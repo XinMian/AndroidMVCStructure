@@ -81,7 +81,8 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Second Fragment", Toast.LENGTH_SHORT).show();
                 //some thing after click this menu
                 getSupportFragmentManager().beginTransaction()
-                        .add(R.id.contentContainer, SecondFragment.newInstance())
+                        .replace(R.id.contentContainer, SecondFragment.newInstance())
+                        .addToBackStack(null)
                         .commit();
             }
 
